@@ -74,7 +74,6 @@ export default function ProductCard({ name, id, image, price }) {
             width="32px"
             height="32px"
             viewBox="0 0 32 32"
-            class=""
             fill="none"
           >
             <path

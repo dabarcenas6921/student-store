@@ -12,8 +12,8 @@ export default function Home({ products }) {
 
   return (
     <div className="home">
-      <Navbar />
       <Sidebar />
+      <Navbar />
       <ProductGrid products={products} />
     </div>
   );
