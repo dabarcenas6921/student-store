@@ -14,7 +14,6 @@ export default function Home({ products }) {
     <div className="home">
       <Navbar />
       <Sidebar />
-      <p>Home</p>
       <ProductGrid products={products} />
     </div>
   );
