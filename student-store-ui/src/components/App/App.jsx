@@ -40,9 +40,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home products={products} />}></Route>
             <Route
-              exact
               path="/products/:productid"
-              element={<ProductDetail />}
+              element={<ProductDetail products={products} />}
             ></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>

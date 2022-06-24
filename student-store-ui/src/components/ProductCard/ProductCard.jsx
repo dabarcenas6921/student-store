@@ -1,14 +1,15 @@
 import * as React from "react";
 import "./ProductCard.css";
-import { useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({ name, id, image, price }) {
   return (
     <div className="product-card">
       <div className="media">
-        <a href={"/products/" + id}>
+        <Link to={"/products/" + id}>
           <img src={image}></img>
-        </a>
+        </Link>
       </div>
       <div className="product-info">
         <div className="main-info">
