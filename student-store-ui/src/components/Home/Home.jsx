@@ -13,7 +13,7 @@ export default function Home({ products }) {
 
   return (
     <div className="home">
-      <Sidebar />
+      <Sidebar products={products} />
       <Navbar />
       <ProductGrid products={products} />
       <About />

@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import { useState } from "react";
 import OpenSidebar from "../OpenSidebar/OpenSidebar";
 
-export default function Sidebar() {
+export default function Sidebar({ products }) {
   const [openState, setOpenState] = useState(false);
 
   const handleClick = () => {
@@ -12,7 +12,7 @@ export default function Sidebar() {
 
   function renderSidebar() {
     if (openState) {
-      return <OpenSidebar setOpenState={setOpenState} />;
+      return <OpenSidebar setOpenState={setOpenState} products={products} />;
     }
 
     return (

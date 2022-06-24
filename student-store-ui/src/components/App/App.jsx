@@ -16,6 +16,9 @@ export default function App() {
       .get("https://codepath-store-api.herokuapp.com/store")
       .then((response) => {
         // handle success
+        response.data.products.forEach((product) => {
+          product.amount = 0;
+        });
         let productData = response.data.products;
         setProducts(productData); //Setting the products object to API products.
       })

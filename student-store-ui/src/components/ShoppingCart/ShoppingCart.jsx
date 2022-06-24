@@ -1,6 +1,8 @@
 import React from "react";
+import CartTable from "../CartTable/CartTable";
 
-function ShoppingCart() {
+function ShoppingCart({ products }) {
+  // If itemQuantity > 1, show Shopping Cart
   return (
     <div>
       <h3>
@@ -11,6 +13,7 @@ function ShoppingCart() {
       </h3>
       <div className="notification">
         No items added to cart yet. Start shopping now!
+        <CartTable products={products} />
       </div>
     </div>
   );
