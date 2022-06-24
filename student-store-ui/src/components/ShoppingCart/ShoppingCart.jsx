@@ -3,6 +3,7 @@ import CartTable from "../CartTable/CartTable";
 
 function ShoppingCart({ products }) {
   // If itemQuantity > 1, show Shopping Cart
+  const filteredProducts = products.filter((product) => product.amount > 0);
   return (
     <div>
       <h3>
@@ -12,8 +13,11 @@ function ShoppingCart({ products }) {
         </span>
       </h3>
       <div className="notification">
-        No items added to cart yet. Start shopping now!
-        <CartTable products={products} />
+        {filteredProducts.length > 0 ? (
+          <CartTable products={filteredProducts} />
+        ) : (
+          "No items added to cart yet. Start shopping now!"
+        )}
       </div>
     </div>
   );

@@ -3,10 +3,11 @@ import "./ProductGrid.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useEffect } from "react";
 
-export default function ProductGrid({ products }) {
-  useEffect(() => {
-    console.log("Now in the productGrid: ", products);
-  });
+export default function ProductGrid({
+  products,
+  addAmountOfProduct,
+  removeAmountOfProduct,
+}) {
   return (
     <div className="product-grid">
       <div className="content">
@@ -19,6 +20,8 @@ export default function ProductGrid({ products }) {
                 id={product.id}
                 image={product.image}
                 price={product.price}
+                addAmountOfProduct={addAmountOfProduct}
+                removeAmountOfProduct={removeAmountOfProduct}
                 key={idx}
               />
             );

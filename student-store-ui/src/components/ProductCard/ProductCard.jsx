@@ -2,9 +2,27 @@ import * as React from "react";
 import "./ProductCard.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-export default function ProductCard({ name, id, image, price }) {
+export default function ProductCard({
+  name,
+  id,
+  image,
+  price,
+  addAmountOfProduct,
+  removeAmountOfProduct,
+}) {
   const [amountBuying, setAmountBuying] = useState(0);
+
+  function addAmount() {
+    addAmountOfProduct(id);
+    setAmountBuying(amountBuying + 1);
+  }
+
+  function removeAmount() {
+    removeAmountOfProduct(id);
+    setAmountBuying(amountBuying - 1);
+  }
 
   return (
     <div className="product-card">
@@ -91,16 +109,10 @@ export default function ProductCard({ name, id, image, price }) {
         </div>
         <div className="actions">
           <div className="product-buttons">
-            <button
-              className="add"
-              onClick={() => setAmountBuying(amountBuying + 1)}
-            >
+            <button className="add" onClick={addAmount}>
               <i className="material-icons">add</i>
             </button>
-            <button
-              className="remove"
-              onClick={() => setAmountBuying(amountBuying - 1)}
-            >
+            <button className="remove" onClick={removeAmount}>
               <i className="material-icons">remove</i>
             </button>
           </div>
