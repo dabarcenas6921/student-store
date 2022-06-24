@@ -3,8 +3,10 @@ import "./About.css";
 
 export default function About() {
   return (
-    <div>
-      <p>About</p>
+    <div className="about-header">
+      <a id="About">
+        <h1>About</h1>
+      </a>
     </div>
   );
 }

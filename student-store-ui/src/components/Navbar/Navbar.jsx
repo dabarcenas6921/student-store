@@ -47,13 +47,13 @@ export default function Navbar() {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/About">About Us</a>
+            <a href="/#About">About Us</a>
           </li>
           <li>
-            <a href="/Contact">Contact Us</a>
+            <a href="/#Contact">Contact Us</a>
           </li>
           <li>
-            <a href="/Buy">Buy Now</a>
+            <a href="/#Buy">Buy Now</a>
           </li>
         </ul>
       </div>

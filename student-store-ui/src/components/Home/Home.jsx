@@ -3,6 +3,7 @@ import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import About from "../About/About";
 import { useEffect } from "react";
 
 export default function Home({ products }) {
@@ -15,6 +16,7 @@ export default function Home({ products }) {
       <Sidebar />
       <Navbar />
       <ProductGrid products={products} />
+      <About />
     </div>
   );
 }

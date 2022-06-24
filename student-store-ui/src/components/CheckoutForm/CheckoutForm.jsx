@@ -18,7 +18,7 @@ function CheckoutForm() {
               className="checkout-form-input"
               type="text"
               placeholder="Student Name"
-              value=""
+              defaultValue=""
             />
           </div>
         </div>
@@ -30,7 +30,7 @@ function CheckoutForm() {
               className="checkout-form-input"
               type="email"
               placeholder="student@codepath.org"
-              value=""
+              defaultValue=""
             />
           </div>
         </div>

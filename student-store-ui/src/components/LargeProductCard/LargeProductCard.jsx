@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "./LargeProductCard.css";
 function LargeProductCard({ products, productid }) {
   const name = products[productid - 1].name;
   const image = products[productid - 1].image;
@@ -11,25 +11,28 @@ function LargeProductCard({ products, productid }) {
   });
 
   return (
-    <div className="product-card">
-      <div className="media">
-        <img src={image} alt="product cover" loading="lazy" />
-      </div>
-      <div className="product-info">
-        <div className="main-info">
-          <p className="product-name">{name}</p>
+    <div className="large-product-view-card">
+      <div className="large-product-card">
+        <div className="large-media">
+          <img className="large-img" src={image} alt="product cover" />
         </div>
-        <div className="desc">
-          <p className="product-description">{description}</p>
-        </div>
-        <div className="actions">
-          <div className="buttons">
-            <button className="add">
-              <i className="material-icons">add</i>
-            </button>
-            <button className="remove">
-              <i className="material-icons">remove</i>
-            </button>
+        <div className="large-product-info">
+          <div className="large-main-info">
+            <p className="large-product-name">{name}</p>
+            <p className="large-product-price">{price}</p>
+          </div>
+          <div className="large-desc">
+            <p className="large-product-description">{description}</p>
+          </div>
+          <div className="large-actions">
+            <div className="large-buttons">
+              <button className="large-add">
+                <i className="material-icons">add</i>
+              </button>
+              <button className="large-remove">
+                <i className="material-icons">remove</i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
