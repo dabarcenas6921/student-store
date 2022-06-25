@@ -4,6 +4,7 @@ import Receipt from "../Receipt/Receipt";
 import "./CartTable.css";
 
 function CartTable({ products }) {
+  const [subTotal, setSubTotal] = useState(0);
   return (
     <div className="CartTable">
       <div className="header">
@@ -20,10 +21,12 @@ function CartTable({ products }) {
               name={product.name}
               amount={product.amount}
               price={product.price}
+              setSubTotal={setSubTotal}
+              subTotal={subTotal}
             />
           );
         })}
-        <Receipt />
+        <Receipt subTotal={subTotal} />
       </div>
     </div>
   );

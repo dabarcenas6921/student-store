@@ -4,6 +4,7 @@ import CartTable from "../CartTable/CartTable";
 function ShoppingCart({ products }) {
   // If itemQuantity > 1, show Shopping Cart
   const filteredProducts = products.filter((product) => product.amount > 0);
+
   return (
     <div>
       <h3>

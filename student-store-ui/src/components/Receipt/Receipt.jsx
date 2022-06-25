@@ -1,14 +1,18 @@
 import React from "react";
 import "./Receipt.css";
 
-function Receipt() {
+function Receipt({ subTotal }) {
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
   return (
     <div class="receipt">
       <div class="receipt-subtotal">
         <span class="label">Subtotal</span>
         <span></span>
         <span></span>
-        <span class="center subtotal">$2.99</span>
+        <span class="center subtotal">{formatter.format(subTotal)}</span>
       </div>
       <div class="receipt-taxes">
         <span class="label">Taxes and Fees</span>
@@ -20,7 +24,7 @@ function Receipt() {
         <span class="label">Total</span>
         <span></span>
         <span></span>
-        <span class="center total-price">$3.25</span>
+        <span class="center total-price">0</span>
       </div>
     </div>
   );
