@@ -6,6 +6,7 @@ function Receipt({ subTotal }) {
     style: "currency",
     currency: "USD",
   });
+  const taxes = subTotal * 0.0725;
   return (
     <div class="receipt">
       <div class="receipt-subtotal">
@@ -18,13 +19,15 @@ function Receipt({ subTotal }) {
         <span class="label">Taxes and Fees</span>
         <span></span>
         <span></span>
-        <span class="center">$0.26</span>
+        <span class="center">{formatter.format(taxes)}</span>
       </div>
       <div class="receipt-total">
         <span class="label">Total</span>
         <span></span>
         <span></span>
-        <span class="center total-price">0</span>
+        <span class="center total-price">
+          {formatter.format(taxes + subTotal)}
+        </span>
       </div>
     </div>
   );

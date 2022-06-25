@@ -5,6 +5,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import About from "../About/About";
 import { useEffect } from "react";
+import SubNavbar from "../SubNavbar/SubNavbar";
+import Hero from "../Hero/Hero";
 
 export default function Home({
   products,
@@ -25,6 +27,8 @@ export default function Home({
         setSubTotal={setSubTotal}
       />
       <Navbar />
+      <Hero />
+      <SubNavbar />
       <ProductGrid
         products={products}
         addAmountOfProduct={addAmountOfProduct}

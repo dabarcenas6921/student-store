@@ -11,7 +11,7 @@ function ProductRow({ name, amount, price }) {
     <div class="product-row">
       <span class="flex-2 cart-product-name">{name}</span>
       <span class="center cart-product-quantity">{amount}</span>
-      <span class="center cart-product-price">${price}</span>
+      <span class="center cart-product-price">{formatter.format(price)}</span>
       <span class="center cart-product-subtotal">{formatter.format(cost)}</span>
     </div>
   );
