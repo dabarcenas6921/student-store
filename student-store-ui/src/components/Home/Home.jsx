@@ -10,15 +10,14 @@ import Hero from "../Hero/Hero";
 
 export default function Home({
   products,
+  setProducts,
   addAmountOfProduct,
   removeAmountOfProduct,
   subTotal,
   setSubTotal,
+  searchInput,
+  setSearchInput,
 }) {
-  useEffect(() => {
-    console.log("Currently in the Home component", products);
-  });
-
   return (
     <div className="home">
       <Sidebar
@@ -28,7 +27,7 @@ export default function Home({
       />
       <Navbar />
       <Hero />
-      <SubNavbar />
+      <SubNavbar searchInput={searchInput} setSearchInput={setSearchInput} />
       <ProductGrid
         products={products}
         addAmountOfProduct={addAmountOfProduct}

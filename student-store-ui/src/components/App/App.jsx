@@ -10,6 +10,10 @@ import axios from "axios";
 export default function App() {
   const [products, setProducts] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
+  const [searchInput, setSearchInput] = useState("");
+  const results = products.filter((product) => {
+    return product.name.includes(searchInput);
+  });
 
   //Fetching product details from API
   function getProductDetails() {
@@ -58,7 +62,10 @@ export default function App() {
               path="/"
               element={
                 <Home
-                  products={products}
+                  products={results}
+                  setProducts={setProducts}
+                  searchInput={searchInput}
+                  setSearchInput={setSearchInput}
                   addAmountOfProduct={addAmountOfProduct}
                   removeAmountOfProduct={removeAmountOfProduct}
                   subTotal={subTotal}

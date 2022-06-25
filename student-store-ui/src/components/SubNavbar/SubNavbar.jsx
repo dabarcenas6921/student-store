@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SubNavbar.css";
 
-function SubNavbar() {
+function SubNavbar({ searchInput, setSearchInput }) {
   return (
     <nav className="content">
       <div className="row">
@@ -10,7 +10,10 @@ function SubNavbar() {
             type="text"
             name="search"
             placeholder="Search"
-            defaultValue=""
+            value={searchInput}
+            onChange={(event) => {
+              setSearchInput(event.target.value);
+            }}
           />
           <i className="material-icons">search</i>
         </div>
