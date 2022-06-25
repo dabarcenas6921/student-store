@@ -7,6 +7,8 @@ export default function ProductGrid({
   products,
   addAmountOfProduct,
   removeAmountOfProduct,
+  subTotal,
+  setSubTotal,
 }) {
   return (
     <div className="product-grid">
@@ -22,6 +24,8 @@ export default function ProductGrid({
                 price={product.price}
                 addAmountOfProduct={addAmountOfProduct}
                 removeAmountOfProduct={removeAmountOfProduct}
+                subTotal={subTotal}
+                setSubTotal={setSubTotal}
                 key={idx}
               />
             );

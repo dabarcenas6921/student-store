@@ -4,7 +4,12 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import CheckoutSuccess from "../CheckoutSuccess/CheckoutSuccess";
 
-export default function OpenSidebar({ setOpenState, products }) {
+export default function OpenSidebar({
+  setOpenState,
+  products,
+  subTotal,
+  setSubTotal,
+}) {
   return (
     <section className="sidebar open">
       <div className="wrapper">
@@ -16,7 +21,11 @@ export default function OpenSidebar({ setOpenState, products }) {
         </button>
         <div className="shopping-cart">
           <div className="open">
-            <ShoppingCart products={products} />
+            <ShoppingCart
+              products={products}
+              subTotal={subTotal}
+              setSubTotal={setSubTotal}
+            />
             <CheckoutForm />
             <CheckoutSuccess />
           </div>

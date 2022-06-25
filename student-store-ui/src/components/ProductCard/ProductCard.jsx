@@ -11,17 +11,23 @@ export default function ProductCard({
   price,
   addAmountOfProduct,
   removeAmountOfProduct,
+  subTotal,
+  setSubTotal,
 }) {
   const [amountBuying, setAmountBuying] = useState(0);
 
   function addAmount() {
     addAmountOfProduct(id);
     setAmountBuying(amountBuying + 1);
+    setSubTotal(subTotal + price);
+    console.log("new subtotal is", subTotal);
   }
 
   function removeAmount() {
     removeAmountOfProduct(id);
     setAmountBuying(amountBuying - 1);
+    setSubTotal(subTotal - price);
+    console.log("new subtotal is", subTotal);
   }
 
   return (
@@ -112,7 +118,10 @@ export default function ProductCard({
             <button className="add" onClick={addAmount}>
               <i className="material-icons">add</i>
             </button>
-            <button className="remove" onClick={removeAmount}>
+            <button
+              className={amountBuying === 0 ? "remove hidden" : "remove"}
+              onClick={removeAmount}
+            >
               <i className="material-icons">remove</i>
             </button>
           </div>

@@ -3,8 +3,7 @@ import ProductRow from "../ProductRow/ProductRow";
 import Receipt from "../Receipt/Receipt";
 import "./CartTable.css";
 
-function CartTable({ products }) {
-  const [subTotal, setSubTotal] = useState(0);
+function CartTable({ products, subTotal, setSubTotal }) {
   return (
     <div className="CartTable">
       <div className="header">
@@ -21,8 +20,6 @@ function CartTable({ products }) {
               name={product.name}
               amount={product.amount}
               price={product.price}
-              setSubTotal={setSubTotal}
-              subTotal={subTotal}
             />
           );
         })}

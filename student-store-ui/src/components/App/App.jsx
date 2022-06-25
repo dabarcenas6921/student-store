@@ -9,6 +9,7 @@ import axios from "axios";
 
 export default function App() {
   const [products, setProducts] = useState([]);
+  const [subTotal, setSubTotal] = useState(0);
 
   //Fetching product details from API
   function getProductDetails() {
@@ -60,6 +61,8 @@ export default function App() {
                   products={products}
                   addAmountOfProduct={addAmountOfProduct}
                   removeAmountOfProduct={removeAmountOfProduct}
+                  subTotal={subTotal}
+                  setSubTotal={setSubTotal}
                 />
               }
             ></Route>

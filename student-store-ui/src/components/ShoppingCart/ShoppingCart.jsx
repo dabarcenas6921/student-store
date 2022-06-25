@@ -1,7 +1,7 @@
 import React from "react";
 import CartTable from "../CartTable/CartTable";
 
-function ShoppingCart({ products }) {
+function ShoppingCart({ products, subTotal, setSubTotal }) {
   // If itemQuantity > 1, show Shopping Cart
   const filteredProducts = products.filter((product) => product.amount > 0);
 
@@ -15,7 +15,11 @@ function ShoppingCart({ products }) {
       </h3>
       <div className="notification">
         {filteredProducts.length > 0 ? (
-          <CartTable products={filteredProducts} />
+          <CartTable
+            products={filteredProducts}
+            subTotal={subTotal}
+            setSubTotal={setSubTotal}
+          />
         ) : (
           "No items added to cart yet. Start shopping now!"
         )}

@@ -10,6 +10,8 @@ export default function Home({
   products,
   addAmountOfProduct,
   removeAmountOfProduct,
+  subTotal,
+  setSubTotal,
 }) {
   useEffect(() => {
     console.log("Currently in the Home component", products);
@@ -17,12 +19,18 @@ export default function Home({
 
   return (
     <div className="home">
-      <Sidebar products={products} />
+      <Sidebar
+        products={products}
+        subTotal={subTotal}
+        setSubTotal={setSubTotal}
+      />
       <Navbar />
       <ProductGrid
         products={products}
         addAmountOfProduct={addAmountOfProduct}
         removeAmountOfProduct={removeAmountOfProduct}
+        subTotal={subTotal}
+        setSubTotal={setSubTotal}
       />
       <About />
     </div>
