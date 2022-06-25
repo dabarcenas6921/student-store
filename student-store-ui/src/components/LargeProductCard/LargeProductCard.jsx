@@ -5,11 +5,6 @@ function LargeProductCard({ products, productid }) {
   const image = products[productid - 1].image;
   const description = products[productid - 1].description;
   const price = products[productid - 1].price;
-
-  useEffect(() => {
-    console.log(name, image, description, price);
-  });
-
   return (
     <div className="large-product-view-card">
       <div className="large-product-card">

@@ -10,13 +10,13 @@ import Hero from "../Hero/Hero";
 
 export default function Home({
   products,
-  setProducts,
   addAmountOfProduct,
   removeAmountOfProduct,
   subTotal,
   setSubTotal,
   searchInput,
   setSearchInput,
+  setCategory,
 }) {
   return (
     <div className="home">
@@ -27,7 +27,11 @@ export default function Home({
       />
       <Navbar />
       <Hero />
-      <SubNavbar searchInput={searchInput} setSearchInput={setSearchInput} />
+      <SubNavbar
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        setCategory={setCategory}
+      />
       <ProductGrid
         products={products}
         addAmountOfProduct={addAmountOfProduct}

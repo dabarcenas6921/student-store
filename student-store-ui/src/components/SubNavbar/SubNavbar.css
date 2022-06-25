@@ -483,3 +483,32 @@ button {
   padding-bottom: 10px;
   transition: all 0.2s ease;
 }
+
+.active {
+  --side-padding: 40px;
+  --dark-blue: #2c4047;
+  --bright-green: #00c385;
+  --pure-white: #fff;
+  --grey-bg: #f7f7f7;
+  --accent-orange: #ff9017;
+  --bright-red: #fe3210;
+  --muted: #969696;
+  --font-dark: #212121;
+  --font-light: #5b5b5b;
+  --border-color: #e4e4e4;
+  --star-color-filled: #e5a800;
+  --star-color-empty: #cbd4e6;
+  --content-width: 800px;
+  -webkit-font-smoothing: antialiased;
+  list-style-type: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 10px;
+  transition: all 0.2s ease;
+  border-bottom: solid 2px var(--bright-green);
+}

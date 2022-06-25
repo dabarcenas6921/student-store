@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import "./SubNavbar.css";
+import { useState } from "react";
 
-function SubNavbar({ searchInput, setSearchInput }) {
+function SubNavbar({ searchInput, setSearchInput, setCategory }) {
+  const [active, setActive] = useState("1");
+
+  const handleClick = (event) => {
+    setCategory(event.target.name);
+    setActive(event.target.id);
+  };
+
   return (
     <nav className="content">
       <div className="row">
@@ -33,20 +41,30 @@ function SubNavbar({ searchInput, setSearchInput }) {
           <i className="material-icons">menu</i>
         </div>
         <ul className="category-menu">
-          <li className="is-active">
-            <button>All Categories</button>
+          <li className={active === "1" ? "active" : ""}>
+            <button onClick={handleClick} id={"1"} name={""}>
+              All Categories
+            </button>
           </li>
-          <li className="">
-            <button>Clothing</button>
+          <li className={active === "2" ? "active" : ""}>
+            <button onClick={handleClick} id={"2"} name={"clothing"}>
+              Clothing
+            </button>
           </li>
-          <li className="">
-            <button>Food</button>
+          <li className={active === "3" ? "active" : ""}>
+            <button onClick={handleClick} id={"3"} name={"food"}>
+              Food
+            </button>
           </li>
-          <li className="">
-            <button>Accessories</button>
+          <li className={active === "4" ? "active" : ""}>
+            <button onClick={handleClick} id={"4"} name={"accessories"}>
+              Accessories
+            </button>
           </li>
-          <li className="">
-            <button>Tech</button>
+          <li className={active === "5" ? "active" : ""}>
+            <button onClick={handleClick} id={"5"} name={"tech"}>
+              Tech
+            </button>
           </li>
         </ul>
       </div>

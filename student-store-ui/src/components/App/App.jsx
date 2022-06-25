@@ -11,8 +11,12 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
   const [searchInput, setSearchInput] = useState("");
+  const [category, setCategory] = useState("");
   const results = products.filter((product) => {
-    return product.name.includes(searchInput);
+    return (
+      product.name.toLowerCase().includes(searchInput) &&
+      product.category.includes(category)
+    );
   });
 
   //Fetching product details from API
@@ -70,6 +74,7 @@ export default function App() {
                   removeAmountOfProduct={removeAmountOfProduct}
                   subTotal={subTotal}
                   setSubTotal={setSubTotal}
+                  setCategory={setCategory}
                 />
               }
             ></Route>
