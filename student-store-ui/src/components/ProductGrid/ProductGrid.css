@@ -24,7 +24,7 @@
   margin: 40px 0;
 }
 
-.product-grid h3 {
+.product-grid-header {
   --side-padding: 40px;
   --dark-blue: #2c4047;
   --bright-green: #00c385;
@@ -48,6 +48,7 @@
   margin: 10px 0 30px;
   font-size: 24px;
   font-weight: 600;
+  float: left;
 }
 
 .content {

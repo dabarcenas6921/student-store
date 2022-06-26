@@ -7,6 +7,7 @@ import About from "../About/About";
 import { useEffect } from "react";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import Hero from "../Hero/Hero";
+import Contact from "../Contact/Contact";
 
 export default function Home({
   products,
@@ -40,6 +41,7 @@ export default function Home({
         setSubTotal={setSubTotal}
       />
       <About />
+      <Contact />
     </div>
   );
 }

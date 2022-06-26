@@ -13,7 +13,9 @@ export default function ProductGrid({
   return (
     <div className="product-grid">
       <div className="content">
-        <h1>Best Selling Products</h1>
+        <a id="Buy">
+          <h3 className="product-grid-header">Best Selling Products</h3>
+        </a>
         <div className="grid">
           {products.map((product, idx) => {
             return (

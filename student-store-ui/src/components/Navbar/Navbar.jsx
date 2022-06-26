@@ -13,7 +13,7 @@ export default function Navbar() {
             ></img>
           </a>
         </div>
-        <div className="socials">
+        <div className="navbar-socials">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="white"
