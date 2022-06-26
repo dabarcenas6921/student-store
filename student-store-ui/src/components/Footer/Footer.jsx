@@ -7,7 +7,7 @@ function Footer() {
       <div className="content">
         <div className="top">
           <div className="links">
-            <div class="link-column">
+            <div className="link-column">
               <h4>Categories</h4>
               <ul>
                 <li>All Categories</li>
@@ -17,7 +17,7 @@ function Footer() {
                 <li>Tech</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Company</h4>
               <ul>
                 <li>About Us</li>

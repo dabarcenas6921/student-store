@@ -12,6 +12,7 @@ import Footer from "../Footer/Footer";
 
 export default function Home({
   products,
+  setProducts,
   addAmountOfProduct,
   removeAmountOfProduct,
   subTotal,
@@ -24,6 +25,7 @@ export default function Home({
     <div className="home">
       <Sidebar
         products={products}
+        setProducts={setProducts}
         subTotal={subTotal}
         setSubTotal={setSubTotal}
       />

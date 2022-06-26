@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function OpenSidebar({
   setOpenState,
   products,
+  setProducts,
   subTotal,
   setSubTotal,
 }) {
@@ -45,6 +46,8 @@ export default function OpenSidebar({
               formOneValue={formOneValue}
               formTwoValue={formTwoValue}
               subTotal={subTotal}
+              setProducts={setProducts}
+              products={products}
             />
           </div>
         </div>

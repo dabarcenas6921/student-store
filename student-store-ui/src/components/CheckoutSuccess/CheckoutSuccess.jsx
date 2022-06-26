@@ -2,6 +2,8 @@ import React from "react";
 import CheckoutReceipt from "../CheckoutReceipt/CheckoutReceipt";
 
 function CheckoutSuccess({
+  products,
+  setProducts,
   filteredProducts,
   checkedOut,
   formOneValue,
@@ -25,6 +27,8 @@ function CheckoutSuccess({
                 formOneValue={formOneValue}
                 formTwoValue={formTwoValue}
                 subTotal={subTotal}
+                setProducts={setProducts}
+                products={products}
               />
             ) : (
               "A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room."

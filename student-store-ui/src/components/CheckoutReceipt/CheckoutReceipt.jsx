@@ -3,15 +3,18 @@ import PurchaseCard from "../PurchaseCard/PurchaseCard";
 import "./CheckoutReceipt.css";
 
 function CheckoutReceipt({
+  products,
   filteredProducts,
   formOneValue,
   formTwoValue,
   subTotal,
+  setProducts,
 }) {
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
+
   return (
     <div className="card">
       <div className="card-head">

@@ -140,7 +140,7 @@
   -webkit-font-smoothing: antialiased;
   height: 40px;
   width: 40px;
-  background: var(--bright-green);
+  background: #576ca8;
   color: #fff;
   fill: #fff;
   display: flex;
@@ -285,7 +285,7 @@
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: var(--pure-white);
-  background: var(--bright-green);
+  background: #576ca8;
   width: 170px;
   height: 40px;
   display: flex;
@@ -510,5 +510,5 @@ button {
   font-size: 18px;
   padding-bottom: 10px;
   transition: all 0.2s ease;
-  border-bottom: solid 2px var(--bright-green);
+  border-bottom: solid 2px #576ca8;
 }
