@@ -6,8 +6,6 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 // Include your gif here
 
-GITHUB PAGES: https://dabarcenas6921.github.io/student-store/
-
 ### Application Features
 
 #### Core Features
