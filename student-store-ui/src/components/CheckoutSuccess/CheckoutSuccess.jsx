@@ -1,6 +1,13 @@
 import React from "react";
+import CheckoutReceipt from "../CheckoutReceipt/CheckoutReceipt";
 
-function CheckoutSuccess() {
+function CheckoutSuccess({
+  filteredProducts,
+  checkedOut,
+  formOneValue,
+  formTwoValue,
+  subTotal,
+}) {
   return (
     <div>
       <div className="checkout-success">
@@ -12,9 +19,16 @@ function CheckoutSuccess() {
         </h3>
         <div className="content">
           <p>
-            A confirmation email will be sent to you so that you can confirm
-            this order. Once you have confirmed the order, it will be delivered
-            to your dorm room.
+            {checkedOut ? (
+              <CheckoutReceipt
+                filteredProducts={filteredProducts}
+                formOneValue={formOneValue}
+                formTwoValue={formTwoValue}
+                subTotal={subTotal}
+              />
+            ) : (
+              "A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room."
+            )}
           </p>
         </div>
       </div>

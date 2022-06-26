@@ -288,15 +288,15 @@ The following specifications were met on the Express backend and the React front
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes the topics in the lab definitely helped with completing this assignment. The most helpful lab for me was the Twitter clone lab. That lab taught me how to use components/states and how props are passed down, which was very helpful for this assignment. The features in this assignment that I did not feel prepared to complete were the Browser Router navigation and the CSS. THe Browser Router was confusing for me and I still do not 100% how it works. The CSS was also very time consuming and I wish the assignment wasn't so big for the little time that we have to complete it.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+I would have added a way to sort items by popularity, cost, or name. This would help with finding the right items if the list of items was bigger. I would have also liked the checkout page to be its own page so that it's much easier to understand.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I enjoyed demoing my project this week. I wish I could have had more features done but it seemed like I was on the same page as other people. I think I would try to add more animations to the page when I have more time to make it more responsive.
 
 ### Open-source libraries used
 

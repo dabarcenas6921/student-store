@@ -11,6 +11,11 @@ export default function OpenSidebar({
   subTotal,
   setSubTotal,
 }) {
+  const filteredProducts = products.filter((product) => product.amount > 0);
+  const [checkedOut, setCheckedOut] = useState(false);
+  const [formOneValue, setFormOneValue] = useState("");
+  const [formTwoValue, setFormTwoValue] = useState("");
+
   return (
     <section className="sidebar open">
       <div className="wrapper">
@@ -27,8 +32,20 @@ export default function OpenSidebar({
               subTotal={subTotal}
               setSubTotal={setSubTotal}
             />
-            <CheckoutForm />
-            <CheckoutSuccess />
+            <CheckoutForm
+              setCheckedOut={setCheckedOut}
+              setFormOneValue={setFormOneValue}
+              setFormTwoValue={setFormTwoValue}
+              formOneValue={formOneValue}
+              formTwoValue={formTwoValue}
+            />
+            <CheckoutSuccess
+              filteredProducts={filteredProducts}
+              checkedOut={checkedOut}
+              formOneValue={formOneValue}
+              formTwoValue={formTwoValue}
+              subTotal={subTotal}
+            />
           </div>
         </div>
       </div>
