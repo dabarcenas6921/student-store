@@ -23,8 +23,8 @@ function Contact() {
               <span>123 Fake Street, San Francisco, CA</span>
             </li>
             <li>
-              <span>Socials: </span>{" "}
-              <span className="socials">
+              <span className="label">Socials: </span>
+              <span className="contact-socials">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path
                     fill-rule="evenodd"

@@ -16,6 +16,11 @@ export default function ProductCard({
 }) {
   const [amountBuying, setAmountBuying] = useState(0);
 
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   function addAmount() {
     addAmountOfProduct(id);
     setAmountBuying(amountBuying + 1);
@@ -111,7 +116,7 @@ export default function ProductCard({
               ></path>
             </svg>
           </div>
-          <p className="product-price">{"$" + price}</p>
+          <p className="product-price">{formatter.format(price)}</p>
         </div>
         <div className="actions">
           <div className="product-buttons">

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import Hero from "../Hero/Hero";
 import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 
 export default function Home({
   products,
@@ -42,6 +43,7 @@ export default function Home({
       />
       <About />
       <Contact />
+      <Footer />
     </div>
   );
 }
