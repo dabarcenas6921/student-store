@@ -76,7 +76,7 @@ function CheckoutForm({
             </label>
           </div>
         </div>
-        <p class="is-danger"></p>
+        <p className="is-danger"></p>
         <div className="field">
           <div className="control">
             <button

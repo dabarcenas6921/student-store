@@ -38,7 +38,7 @@ export default function ProductCard({
   return (
     <div className="product-card">
       <div className="media">
-        <Link to={"/products/" + id}>
+        <Link to={`/products/${id}`}>
           <img src={image}></img>
         </Link>
       </div>
