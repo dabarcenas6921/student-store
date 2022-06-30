@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CheckoutReceipt from "../CheckoutReceipt/CheckoutReceipt";
+import axios from "axios";
 
 function CheckoutSuccess({
   products,
@@ -10,6 +11,41 @@ function CheckoutSuccess({
   formTwoValue,
   subTotal,
 }) {
+  const [orderNumber, setOrderNumber] = useState(1);
+  const currentDate = new Date().toUTCString();
+
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
+  useEffect(() => {
+    if (checkedOut == true) {
+      const shoppingCart = filteredProducts.map((product) => {
+        let newObj = {};
+        newObj["id"] = product.id;
+        newObj["amount"] = product.amount;
+        return newObj;
+      });
+
+      axios
+        .post("http://localhost:3001/store/", {
+          orderId: orderNumber,
+          user: { name: formOneValue, email: formTwoValue },
+          shoppingCart: shoppingCart,
+          total: formatter.format(subTotal * 1.0725),
+          createdAt: currentDate,
+        })
+        .then((response) => {
+          console.log("POSTED THE OBJECT...");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      setOrderNumber(orderNumber + 1);
+    }
+  }, [checkedOut]);
   return (
     <div>
       <div className="checkout-success">

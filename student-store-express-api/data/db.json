@@ -145,5 +145,29 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "orderId": 1,
+      "user": {
+        "name": "david",
+        "email": "david@codepath.com"
+      },
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 3
+        },
+        {
+          "id": 6,
+          "amount": 3
+        },
+        {
+          "id": 7,
+          "amount": 2
+        }
+      ],
+      "total": "$78.21",
+      "createdAt": "Thu, 30 Jun 2022 23:32:43 GMT"
+    }
+  ]
 }

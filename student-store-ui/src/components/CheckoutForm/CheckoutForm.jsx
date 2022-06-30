@@ -11,7 +11,9 @@ function CheckoutForm({
   const [checkoutButtonPressed, setCheckoutButtonPressed] = useState(false);
 
   //Every time form one or form two update, it checks if both are filled out. If they are, then you can check out. Otherwise, you cannot.
-  useEffect(() => {
+
+  function handleCheckOutButtonPress() {
+    setCheckoutButtonPressed(true);
     if (
       formOneValue.length > 0 &&
       formTwoValue.length > 0 &&
@@ -22,9 +24,9 @@ function CheckoutForm({
       console.log("ALL TRUE");
     } else {
       setCheckedOut(false);
-      ("ALL FALSE");
+      console.log("false!");
     }
-  }, [checkoutButtonPressed]);
+  }
 
   return (
     <div>
@@ -81,7 +83,7 @@ function CheckoutForm({
           <div className="control">
             <button
               className="button checkout-button"
-              onClick={() => setCheckoutButtonPressed(true)}
+              onClick={handleCheckOutButtonPress}
             >
               Checkout
             </button>
