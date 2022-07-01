@@ -145,5 +145,44 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "orderId": 1,
+      "user": {
+        "name": "david",
+        "email": "david@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 1
+        },
+        {
+          "id": 2,
+          "amount": 1
+        }
+      ],
+      "total": "$2.67",
+      "createdAt": "Fri, 01 Jul 2022 20:26:57 GMT"
+    },
+    {
+      "orderId": 1,
+      "user": {
+        "name": "david2",
+        "email": "david@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 1
+        },
+        {
+          "id": 12,
+          "amount": 1
+        }
+      ],
+      "total": "$430.05",
+      "createdAt": "Fri, 01 Jul 2022 20:28:05 GMT"
+    }
+  ]
 }
