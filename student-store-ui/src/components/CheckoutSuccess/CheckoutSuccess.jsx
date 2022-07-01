@@ -13,6 +13,9 @@ function CheckoutSuccess({
   subTotal,
   handleCheckOutButtonPress,
   resetProductAmounts,
+  setFormOneValue,
+  setFormTwoValue,
+  setCheckboxchecked,
 }) {
   const [orderNumber, setOrderNumber] = useState(1);
   const currentDate = new Date().toUTCString();
@@ -26,6 +29,9 @@ function CheckoutSuccess({
   function handleShowReceipt() {
     setShowReceipt(false);
     resetProductAmounts();
+    setFormOneValue("");
+    setFormTwoValue("");
+    setCheckboxchecked(false);
   }
 
   useEffect(() => {

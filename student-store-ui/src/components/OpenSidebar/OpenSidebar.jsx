@@ -17,6 +17,7 @@ export default function OpenSidebar({
   const [checkedOut, setCheckedOut] = useState(false);
   const [formOneValue, setFormOneValue] = useState("");
   const [formTwoValue, setFormTwoValue] = useState("");
+  const [checkboxChecked, setCheckboxchecked] = useState(false);
 
   function handleCheckOutButtonPress() {
     // setCheckoutButtonPressed(true);
@@ -46,6 +47,8 @@ export default function OpenSidebar({
               setFormTwoValue={setFormTwoValue}
               formOneValue={formOneValue}
               formTwoValue={formTwoValue}
+              setCheckboxchecked={setCheckboxchecked}
+              checkboxChecked={checkboxChecked}
               handleCheckOutButtonPress={handleCheckOutButtonPress}
             />
             <CheckoutSuccess
@@ -54,10 +57,14 @@ export default function OpenSidebar({
               setCheckedOut={setCheckedOut}
               formOneValue={formOneValue}
               formTwoValue={formTwoValue}
+              setFormOneValue={setFormOneValue}
+              setFormTwoValue={setFormTwoValue}
               subTotal={subTotal}
               setProducts={setProducts}
               products={products}
               handleCheckOutButtonPress={handleCheckOutButtonPress}
+              checkboxChecked={checkboxChecked}
+              setCheckboxchecked={setCheckboxchecked}
               resetProductAmounts={resetProductAmounts}
             />
           </div>

@@ -7,8 +7,9 @@ function CheckoutForm({
   formOneValue,
   formTwoValue,
   handleCheckOutButtonPress,
+  checkboxChecked,
+  setCheckboxchecked,
 }) {
-  const [checkboxChecked, setCheckboxchecked] = useState(false);
   const [checkoutButtonPressed, setCheckoutButtonPressed] = useState(false);
 
   //Every time form one or form two update, it checks if both are filled out. If they are, then you can check out. Otherwise, you cannot.
@@ -16,6 +17,10 @@ function CheckoutForm({
   function checkConditions() {
     if (formOneValue.length > 0 && formTwoValue.length > 0 && checkboxChecked) {
       handleCheckOutButtonPress();
+      console.log("true in conditions");
+    } else {
+      console.log("something is false");
+      console.log(checkboxChecked);
     }
   }
 
@@ -36,7 +41,7 @@ function CheckoutForm({
               className="checkout-form-input"
               type="text"
               placeholder="Student Name"
-              defaultValue=""
+              value={formOneValue}
               onChange={(e) => setFormOneValue(e.target.value)}
             />
           </div>
@@ -49,7 +54,7 @@ function CheckoutForm({
               className="checkout-form-input"
               type="email"
               placeholder="student@codepath.org"
-              defaultValue=""
+              value={formTwoValue}
               onChange={(e) => setFormTwoValue(e.target.value)}
             />
           </div>
@@ -60,7 +65,8 @@ function CheckoutForm({
               <input
                 name="termsAndConditions"
                 type="checkbox"
-                onChange={(e) => setCheckboxchecked((current) => !current)}
+                onChange={(e) => setCheckboxchecked(e.target.checked)}
+                checked={checkboxChecked}
               />
               <span className="label">
                 I agree to the{" "}
