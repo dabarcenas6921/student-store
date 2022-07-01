@@ -9,13 +9,12 @@ export default function ProductCard({
   id,
   image,
   price,
+  amount,
   addAmountOfProduct,
   removeAmountOfProduct,
   subTotal,
   setSubTotal,
 }) {
-  const [amountBuying, setAmountBuying] = useState(0);
-
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -23,14 +22,12 @@ export default function ProductCard({
 
   function addAmount() {
     addAmountOfProduct(id);
-    setAmountBuying(amountBuying + 1);
     setSubTotal(subTotal + price);
     console.log("new subtotal is", subTotal);
   }
 
   function removeAmount() {
     removeAmountOfProduct(id);
-    setAmountBuying(amountBuying - 1);
     setSubTotal(subTotal - price);
     console.log("new subtotal is", subTotal);
   }
@@ -124,14 +121,14 @@ export default function ProductCard({
               <i className="material-icons">add</i>
             </button>
             <button
-              className={amountBuying === 0 ? "remove hidden" : "remove"}
+              className={amount === 0 ? "remove hidden" : "remove"}
               onClick={removeAmount}
             >
               <i className="material-icons">remove</i>
             </button>
           </div>
-          <span className={amountBuying > 0 ? "quantity" : "quantity hidden"}>
-            <span className="amt">{amountBuying}</span>
+          <span className={amount > 0 ? "quantity" : "quantity hidden"}>
+            <span className="amt">{amount}</span>
           </span>
         </div>
       </div>

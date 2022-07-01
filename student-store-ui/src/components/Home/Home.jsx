@@ -20,6 +20,7 @@ export default function Home({
   searchInput,
   setSearchInput,
   setCategory,
+  resetProductAmounts,
 }) {
   return (
     <div className="home">
@@ -28,6 +29,7 @@ export default function Home({
         setProducts={setProducts}
         subTotal={subTotal}
         setSubTotal={setSubTotal}
+        resetProductAmounts={resetProductAmounts}
       />
       <Navbar />
       <Hero />

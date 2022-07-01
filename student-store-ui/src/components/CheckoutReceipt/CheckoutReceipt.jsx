@@ -9,6 +9,8 @@ function CheckoutReceipt({
   formTwoValue,
   subTotal,
   setProducts,
+  resetProductAmounts,
+  handleShowReceipt,
 }) {
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -42,8 +44,12 @@ function CheckoutReceipt({
         </ul>
       </div>
       <footer className="card-foot">
-        <button className="button">Shop More</button>
-        <button className="button">Exit</button>
+        <button className="button" onClick={() => handleShowReceipt()}>
+          Shop More
+        </button>
+        <button className="button" onClick={() => handleShowReceipt()}>
+          Exit
+        </button>
       </footer>
     </div>
   );

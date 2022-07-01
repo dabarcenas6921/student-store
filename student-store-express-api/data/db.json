@@ -149,8 +149,31 @@
     {
       "orderId": 1,
       "user": {
-        "name": "david",
-        "email": "david@codepath.com"
+        "name": "Daniel Ortiz",
+        "email": "danny@codepath.com"
+      },
+      "shoppingCart": [
+        {
+          "id": 7,
+          "amount": 1
+        },
+        {
+          "id": 14,
+          "amount": 1
+        },
+        {
+          "id": 16,
+          "amount": 3
+        }
+      ],
+      "total": "$3,340.79",
+      "createdAt": "Fri, 01 Jul 2022 02:42:06 GMT"
+    },
+    {
+      "orderId": 2,
+      "user": {
+        "name": "David",
+        "email": "david@codepath.org"
       },
       "shoppingCart": [
         {
@@ -162,12 +185,16 @@
           "amount": 3
         },
         {
-          "id": 7,
-          "amount": 2
+          "id": 11,
+          "amount": 4
+        },
+        {
+          "id": 12,
+          "amount": 1
         }
       ],
-      "total": "$78.21",
-      "createdAt": "Thu, 30 Jun 2022 23:32:43 GMT"
+      "total": "$4,695.29",
+      "createdAt": "Fri, 01 Jul 2022 02:42:56 GMT"
     }
   ]
 }

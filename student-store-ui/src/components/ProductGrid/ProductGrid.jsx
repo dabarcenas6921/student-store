@@ -24,6 +24,7 @@ export default function ProductGrid({
                 id={product.id}
                 image={product.image}
                 price={product.price}
+                amount={product.amount}
                 addAmountOfProduct={addAmountOfProduct}
                 removeAmountOfProduct={removeAmountOfProduct}
                 subTotal={subTotal}

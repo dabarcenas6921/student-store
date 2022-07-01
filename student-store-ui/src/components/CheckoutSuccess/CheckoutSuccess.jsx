@@ -7,17 +7,26 @@ function CheckoutSuccess({
   setProducts,
   filteredProducts,
   checkedOut,
+  setCheckedOut,
   formOneValue,
   formTwoValue,
   subTotal,
+  handleCheckOutButtonPress,
+  resetProductAmounts,
 }) {
   const [orderNumber, setOrderNumber] = useState(1);
   const currentDate = new Date().toUTCString();
+  const [showReceipt, setShowReceipt] = useState(false);
 
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
+
+  function handleShowReceipt() {
+    setShowReceipt(false);
+    resetProductAmounts();
+  }
 
   useEffect(() => {
     if (checkedOut == true) {
@@ -42,10 +51,11 @@ function CheckoutSuccess({
         .catch((err) => {
           console.log(err);
         });
-
       setOrderNumber(orderNumber + 1);
+      setCheckedOut(false);
+      setShowReceipt(true);
     }
-  }, [checkedOut]);
+  }, [handleCheckOutButtonPress]);
   return (
     <div>
       <div className="checkout-success">
@@ -57,7 +67,7 @@ function CheckoutSuccess({
         </h3>
         <div className="content">
           <p>
-            {checkedOut ? (
+            {showReceipt ? (
               <CheckoutReceipt
                 filteredProducts={filteredProducts}
                 formOneValue={formOneValue}
@@ -65,6 +75,8 @@ function CheckoutSuccess({
                 subTotal={subTotal}
                 setProducts={setProducts}
                 products={products}
+                resetProductAmounts={resetProductAmounts}
+                handleShowReceipt={handleShowReceipt}
               />
             ) : (
               "A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room."

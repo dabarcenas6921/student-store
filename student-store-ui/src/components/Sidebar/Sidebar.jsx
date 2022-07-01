@@ -8,6 +8,7 @@ export default function Sidebar({
   subTotal,
   setSubTotal,
   setProducts,
+  resetProductAmounts,
 }) {
   const [openState, setOpenState] = useState(false);
 
@@ -24,6 +25,7 @@ export default function Sidebar({
           setProducts={setProducts}
           subTotal={subTotal}
           setSubTotal={subTotal}
+          resetProductAmounts={resetProductAmounts}
         />
       );
     }

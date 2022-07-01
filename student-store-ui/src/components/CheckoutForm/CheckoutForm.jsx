@@ -6,25 +6,16 @@ function CheckoutForm({
   setFormTwoValue,
   formOneValue,
   formTwoValue,
+  handleCheckOutButtonPress,
 }) {
   const [checkboxChecked, setCheckboxchecked] = useState(false);
   const [checkoutButtonPressed, setCheckoutButtonPressed] = useState(false);
 
   //Every time form one or form two update, it checks if both are filled out. If they are, then you can check out. Otherwise, you cannot.
 
-  function handleCheckOutButtonPress() {
-    setCheckoutButtonPressed(true);
-    if (
-      formOneValue.length > 0 &&
-      formTwoValue.length > 0 &&
-      checkboxChecked &&
-      checkoutButtonPressed
-    ) {
-      setCheckedOut(true);
-      console.log("ALL TRUE");
-    } else {
-      setCheckedOut(false);
-      console.log("false!");
+  function checkConditions() {
+    if (formOneValue.length > 0 && formTwoValue.length > 0 && checkboxChecked) {
+      handleCheckOutButtonPress();
     }
   }
 
@@ -83,7 +74,7 @@ function CheckoutForm({
           <div className="control">
             <button
               className="button checkout-button"
-              onClick={handleCheckOutButtonPress}
+              onClick={checkConditions}
             >
               Checkout
             </button>

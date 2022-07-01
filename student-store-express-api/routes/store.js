@@ -13,6 +13,16 @@ router.get("/", (req, res, next) => {
     next(e);
   }
 });
+router.get("/purchases", (req, res, next) => {
+  try {
+    console.log("Getting purchases...");
+    const purchasesList = Store.returnPurchases().value();
+    res.status(200).json({ purchases: purchasesList });
+  } catch (e) {
+    console.log(e);
+    next(e);
+  }
+});
 
 router.get("/:productId", (req, res, next) => {
   try {

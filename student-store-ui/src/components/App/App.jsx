@@ -57,6 +57,14 @@ export default function App() {
     setProducts(newProducts);
   }
 
+  function resetProductAmounts() {
+    let newProducts = [...products];
+    newProducts.forEach((product) => {
+      product.amount = 0;
+    });
+    setProducts(newProducts);
+  }
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -75,6 +83,7 @@ export default function App() {
                   subTotal={subTotal}
                   setSubTotal={setSubTotal}
                   setCategory={setCategory}
+                  resetProductAmounts={resetProductAmounts}
                 />
               }
             ></Route>
