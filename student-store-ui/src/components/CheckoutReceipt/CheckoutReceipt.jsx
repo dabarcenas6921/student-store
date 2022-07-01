@@ -27,9 +27,10 @@ function CheckoutReceipt({
           Showing receipt for {formOneValue} available at {formTwoValue}:
         </p>
         <ul className="purchase">
-          {filteredProducts.map((product) => {
+          {filteredProducts.map((product, idx) => {
             return (
               <PurchaseCard
+                key={idx}
                 amount={product.amount}
                 name={product.name}
                 price={product.price}

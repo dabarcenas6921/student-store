@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CheckoutReceipt from "../CheckoutReceipt/CheckoutReceipt";
 import axios from "axios";
+import "./CheckoutSuccess.css";
 
 function CheckoutSuccess({
   products,
@@ -71,23 +72,21 @@ function CheckoutSuccess({
             <i className="material-icons md-48">fact_check</i>
           </span>
         </h3>
-        <div className="content">
-          <p>
-            {showReceipt ? (
-              <CheckoutReceipt
-                filteredProducts={filteredProducts}
-                formOneValue={formOneValue}
-                formTwoValue={formTwoValue}
-                subTotal={subTotal}
-                setProducts={setProducts}
-                products={products}
-                resetProductAmounts={resetProductAmounts}
-                handleShowReceipt={handleShowReceipt}
-              />
-            ) : (
-              "A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room."
-            )}
-          </p>
+        <div className="receipt-content">
+          {showReceipt ? (
+            <CheckoutReceipt
+              filteredProducts={filteredProducts}
+              formOneValue={formOneValue}
+              formTwoValue={formTwoValue}
+              subTotal={subTotal}
+              setProducts={setProducts}
+              products={products}
+              resetProductAmounts={resetProductAmounts}
+              handleShowReceipt={handleShowReceipt}
+            />
+          ) : (
+            "A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room."
+          )}
         </div>
       </div>
     </div>

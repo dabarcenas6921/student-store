@@ -8,11 +8,15 @@ function ProductRow({ name, amount, price }) {
   });
   let cost = price * amount;
   return (
-    <div class="product-row">
-      <span class="flex-2 cart-product-name">{name}</span>
-      <span class="center cart-product-quantity">{amount}</span>
-      <span class="center cart-product-price">{formatter.format(price)}</span>
-      <span class="center cart-product-subtotal">{formatter.format(cost)}</span>
+    <div className="product-row">
+      <span className="flex-2 cart-product-name">{name}</span>
+      <span className="center cart-product-quantity">{amount}</span>
+      <span className="center cart-product-price">
+        {formatter.format(price)}
+      </span>
+      <span className="center cart-product-subtotal">
+        {formatter.format(cost)}
+      </span>
     </div>
   );
 }
