@@ -2,12 +2,23 @@ import React, { useEffect } from "react";
 import "./SubNavbar.css";
 import { useState } from "react";
 
-function SubNavbar({ searchInput, setSearchInput, setCategory }) {
+function SubNavbar({
+  searchInput,
+  setSearchInput,
+  setCategory,
+  openState,
+  setOpenState,
+}) {
   const [active, setActive] = useState("1");
 
   const handleClick = (event) => {
     setCategory(event.target.name);
     setActive(event.target.id);
+  };
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    setOpenState((s) => !s);
   };
 
   return (
@@ -29,11 +40,11 @@ function SubNavbar({ searchInput, setSearchInput, setCategory }) {
           <span className="help">
             <i className="material-icons">help</i>Help
           </span>
-          <div className="cart">
+          <button className="cart" onClick={handleCartClick}>
             <a href="/">
               My Cart<i className="material-icons">shopping_cart</i>
             </a>
-          </div>
+          </button>
         </div>
       </div>
       <div className="row">

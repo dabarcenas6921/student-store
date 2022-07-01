@@ -9,9 +9,9 @@ export default function Sidebar({
   setSubTotal,
   setProducts,
   resetProductAmounts,
+  openState,
+  setOpenState,
 }) {
-  const [openState, setOpenState] = useState(false);
-
   const handleClick = () => {
     setOpenState((s) => !s);
   };

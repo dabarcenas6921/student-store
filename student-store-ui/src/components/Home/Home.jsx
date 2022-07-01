@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import About from "../About/About";
-import { useEffect } from "react";
+import { useState } from "react";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import Hero from "../Hero/Hero";
 import Contact from "../Contact/Contact";
@@ -22,6 +22,7 @@ export default function Home({
   setCategory,
   resetProductAmounts,
 }) {
+  const [openState, setOpenState] = useState(false);
   return (
     <div className="home">
       <Sidebar
@@ -30,6 +31,8 @@ export default function Home({
         subTotal={subTotal}
         setSubTotal={setSubTotal}
         resetProductAmounts={resetProductAmounts}
+        openState={openState}
+        setOpenState={setOpenState}
       />
       <Navbar />
       <Hero />
@@ -37,6 +40,8 @@ export default function Home({
         searchInput={searchInput}
         setSearchInput={setSearchInput}
         setCategory={setCategory}
+        setOpenState={setOpenState}
+        openState={openState}
       />
       <ProductGrid
         products={products}
