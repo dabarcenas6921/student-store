@@ -55,6 +55,9 @@ export default function Navbar() {
           <li>
             <a href="/#Buy">Buy Now</a>
           </li>
+          <li>
+            <a href="/orders">Orders</a>
+          </li>
         </ul>
       </div>
     </nav>

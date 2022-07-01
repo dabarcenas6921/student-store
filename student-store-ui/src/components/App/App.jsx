@@ -3,6 +3,7 @@ import Home from "../Home/Home";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
+import Orders from "../Orders/Orders";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -90,6 +91,23 @@ export default function App() {
             <Route
               path="/products/:productid"
               element={<ProductDetail products={products} />}
+            ></Route>
+            <Route
+              path="/orders"
+              element={
+                <Orders
+                  products={results}
+                  setProducts={setProducts}
+                  searchInput={searchInput}
+                  setSearchInput={setSearchInput}
+                  addAmountOfProduct={addAmountOfProduct}
+                  removeAmountOfProduct={removeAmountOfProduct}
+                  subTotal={subTotal}
+                  setSubTotal={setSubTotal}
+                  setCategory={setCategory}
+                  resetProductAmounts={resetProductAmounts}
+                />
+              }
             ></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
