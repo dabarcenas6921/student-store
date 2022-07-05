@@ -7,6 +7,7 @@ import Orders from "../Orders/Orders";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 export default function App() {
   const [products, setProducts] = useState([]);

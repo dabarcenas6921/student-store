@@ -18,9 +18,9 @@ function CheckoutSuccess({
   setFormTwoValue,
   setCheckboxchecked,
 }) {
-  const [orderNumber, setOrderNumber] = useState(1);
-  const currentDate = new Date().toUTCString();
+  const currentDate = new Date().toDateString();
   const [showReceipt, setShowReceipt] = useState(false);
+  const [purchasesLength, setPurchasesLength] = useState(0);
 
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -36,6 +36,18 @@ function CheckoutSuccess({
   }
 
   useEffect(() => {
+    axios
+      .get("http://localhost:3001/store/purchases")
+      .then((response) => {
+        console.log(response.data.purchases.length);
+        setPurchasesLength(response.data.purchases.length);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
     if (checkedOut == true) {
       const shoppingCart = filteredProducts.map((product) => {
         let newObj = {};
@@ -46,7 +58,7 @@ function CheckoutSuccess({
 
       axios
         .post("http://localhost:3001/store/", {
-          orderId: orderNumber,
+          orderId: purchasesLength,
           user: { name: formOneValue, email: formTwoValue },
           shoppingCart: shoppingCart,
           total: formatter.format(subTotal * 1.0725),
@@ -58,7 +70,6 @@ function CheckoutSuccess({
         .catch((err) => {
           console.log(err);
         });
-      setOrderNumber(orderNumber + 1);
       setCheckedOut(false);
       setShowReceipt(true);
     }
